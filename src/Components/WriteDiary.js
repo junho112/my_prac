@@ -10,7 +10,7 @@ class WriteDiary extends React.Component{
           this.props.onSubmit(
             e.target.title.value,
             e.target.desc.value
-          );
+          );//greate
         }.bind(this)}>
             <input placeholder='title' name="title"></input><br/><br/>
             <textarea placeholder='write your diary' name="desc" cols = "40" rows = "30" font-size ="100px"></textarea><br/><br/>
