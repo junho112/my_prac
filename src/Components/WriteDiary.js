@@ -13,7 +13,7 @@ class WriteDiary extends React.Component{
           );//greate
         }.bind(this)}>
             <input placeholder='title' name="title"></input><br/><br/>
-            <textarea placeholder='write your diary' name="desc" cols = "40" rows = "30" font-size ="100px"></textarea><br/><br/>
+            <textarea placeholder='write your diary' name="desc" cols = "40" rows = "30"></textarea><br/><br/>
             <button type="submit">submit</button>
         </form>
       </div>

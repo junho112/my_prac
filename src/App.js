@@ -56,14 +56,23 @@ class App extends React.Component{
       }.bind(this)}></WriteDiary>
     }
     else if(this.state.mode ==='fix'){
-      _article = <UpdateDiary onSubmit={function(_title,_desc){
-        this.max_id = this.max_id+1;
+      var i = 0;
+      while(i<this.state.contents.length){
+        var data = this.state.contents[i];
+        if(data.id === this.state.selected_content_id){
+          _title = data.title;
+          _desc = data.desc;
+          break;
+        }
+        i++;
+      }
+      _article = <UpdateDiary title={_title} desc={_desc} onSubmit={function(_title,_desc){
         var _contents = Array.from(this.state.contents);
-        _contents.push({id:this.max_id,title:_title,desc:_desc});
-        this.setState({
+        _contents[i].title = _title;
+        _contents[i].desc = _desc;
+          this.setState({
           contents : _contents,
-          mode : 'read',
-          selected_content_id : this.max_id
+          mode : 'read'
         })
       }.bind(this)}></UpdateDiary>
     }
